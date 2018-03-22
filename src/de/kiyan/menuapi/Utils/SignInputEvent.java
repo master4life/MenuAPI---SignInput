@@ -35,7 +35,7 @@ public class SignInputEvent extends Event
 
     public String getLine( int num )
     {
-        return this.input[ 0 ];
+        return this.input[ num ];
     }
 
     public String[] getLines( )

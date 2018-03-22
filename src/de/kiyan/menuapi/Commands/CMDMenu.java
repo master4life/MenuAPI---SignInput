@@ -86,6 +86,7 @@ public class CMDMenu implements CommandExecutor, Listener
             @Override
             public void onClose( InventoryCloseEvent e ) { }
 
+            // Handling of inventory items
             @Override
             public void onClick( InventoryClickEvent e )
             {
@@ -106,7 +107,7 @@ public class CMDMenu implements CommandExecutor, Listener
                     //This means that the item clicked wasnt one of the options we defined.
                 }
             }
-        }.addOption( new ItemBuilder( Material.DIAMOND ).setName( "§cHerbert" ).toItemStack( ), 2 );
+        }.addOption( new ItemBuilder( Material.DIAMOND ).setName( "§cHerbert" ).toItemStack( ), 2 ); // You can add as much as you have space for items.
 
         menu.show( player );
 
@@ -117,11 +118,7 @@ public class CMDMenu implements CommandExecutor, Listener
     public void SignInput( SignInputEvent event )
     {
         Player player = ( Player ) event.getPlayer( );
-        String signLines = Arrays.toString( event.getLines( ) ) // Receive typed messages in to 'signLines' and replace all non-needed chars.
-                .replace( ",", "" )
-                .replace( "[", "" )
-                .replace( "]", "" )
-                .replace( " ", "" ).trim( );
+        String signLines = event.getLine( 0 ) + event.getLine( 1 ) + event.getLine( 2 ) + event.getLine( 3 );
 
         player.sendMessage( "Succesful! You just typed | §c" + signLines );
     }
