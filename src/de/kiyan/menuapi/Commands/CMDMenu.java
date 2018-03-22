@@ -9,6 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
@@ -37,19 +38,20 @@ public class CMDMenu implements CommandExecutor, Listener
         Player player = ( Player ) sender;
 
         /*
-        * YesNoGUI is the confirmation menu. This can be used to double check the seriousness about the users choice.
-        * @param title - Define your custom chest name
-        * @param plugin - return your main instance to get it working.
-        *
-        * onFinish. Represent the user choice.
-        *           Response.YES == When he clicked on 'Yes' and initiate the code below.
-        *           and
-        *           REsponse.NO == When he clicked on 'No'
-        *
-        * Optional: You can also override onClose( ) & onClick( ) to change behavior ( but not needed ).
-        *
+         * YesNoGUI is the confirmation menu. This can be used to double check the seriousness about the users choice.
+         * @param title - Define your custom chest name
+         * @param plugin - return your main instance to get it working.
+         *
+         * onFinish. Represent the user choice.
+         *           Response.YES == When he clicked on 'Yes' and initiate the code below.
+         *           and
+         *           REsponse.NO == When he clicked on 'No'
+         *
+         * Optional: You can also override onClose( ) & onClick( ) to change behavior ( but not needed ).
+         *
          */
-        YesNoGUI menu2 = new YesNoGUI( "§2§lAre you sure?", Main.getInstance ) {
+        YesNoGUI menu2 = new YesNoGUI( "§2§lAre you sure?", Main.getInstance )
+        {
             @Override
             public void onFinish( Response response )
             {
@@ -96,15 +98,17 @@ public class CMDMenu implements CommandExecutor, Listener
 
                 if( is == null )
                     return;
-                try
+
+                // Configurate click type ClickType.LEFT an so on..
+                if( e.getClick() == ClickType.LEFT && is.getType( ) == Material.DIAMOND )
                 {
-                    if( is.getType() == Material.DIAMOND )
-                    {
-                        menu2.show( player );
-                    }
-                } catch( Exception ex )
+                    menu2.show( player );
+                }
+
+                if( e.getClick() == ClickType.RIGHT && is.getType( ) == Material.DIAMOND )
                 {
-                    //This means that the item clicked wasnt one of the options we defined.
+                    player.sendMessage( "This" );
+                    player.closeInventory(); // to close current menu
                 }
             }
         }.addOption( new ItemBuilder( Material.DIAMOND ).setName( "§cHerbert" ).toItemStack( ), 2 ); // You can add as much as you have space for items.
@@ -114,11 +118,25 @@ public class CMDMenu implements CommandExecutor, Listener
         return false;
     }
 
+    /*
+     * This custom listener gets triggered, when the user closed the SignInputField.
+     * It delievers information like  player, single signLines, Array signlines or getHandlers (???).
+     *
+     * Can also be placed on main class.
+     */
     @EventHandler
     public void SignInput( SignInputEvent event )
     {
         Player player = ( Player ) event.getPlayer( );
         String signLines = event.getLine( 0 ) + event.getLine( 1 ) + event.getLine( 2 ) + event.getLine( 3 );
+
+        if( signLines.equalsIgnoreCase( "" ) )
+        {
+            player.sendMessage( "You cannot leave it empty, please type again!" );
+            new SignInputAPI( ).openEditor( player );
+
+            return;
+        }
 
         player.sendMessage( "Succesful! You just typed | §c" + signLines );
     }

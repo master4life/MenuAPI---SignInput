@@ -50,13 +50,13 @@ public class Main extends JavaPlugin implements Listener
     @EventHandler
     public void onInventoryClose( InventoryCloseEvent e )
     {
-       MenuGUI menu = MenuGUI.checkForMenuClose( this, e ); //Assuming that 'this' is a JavaPlugin object, your main class instance
+       MenuGUI menu = MenuGUI.checkForMenuClose( this, e ); // Assuming that 'this' is a JavaPlugin object, your main class instance
     }
 
     @EventHandler
     public void onInventoryClick( InventoryClickEvent e )
     {
-        MenuGUI menu = MenuGUI.checkForMenuClick( this, e, false ); //Assuming that 'this' is a JavaPlugin object, your main class instance
+        MenuGUI menu = MenuGUI.checkForMenuClick( this, e, true ); // Assuming that 'this' is a JavaPlugin object, your main class instance
         if( menu != null )
         {
             e.setCancelled( true );

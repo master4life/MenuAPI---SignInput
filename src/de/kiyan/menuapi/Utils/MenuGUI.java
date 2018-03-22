@@ -37,18 +37,25 @@ public abstract class MenuGUI implements Listener
     {
         if( e == null )
             return null;
+
         if( e.getClickedInventory( ) == null )
             return null;
+
         for( MenuGUI gui : guis )
         {
             if( gui.main.getDescription( ).getName( ).equals( plugin.getDescription( ).getName( ) ) )
             {
-                if( gui.inv.getType( ) == e.getClickedInventory( ).getType( ) && gui.inv.getTitle( ).equals( e.getClickedInventory( ).getTitle( ) ) && gui.inv.getViewers( ).equals( e.getClickedInventory( ).getViewers( ) ) )
+                if( gui.inv.getType( ) == e.getClickedInventory( ).getType( )
+                        && gui.inv.getTitle( ).equals( e.getClickedInventory( ).getTitle( ) )
+                        && gui.inv.getViewers( ).equals( e.getClickedInventory( ).getViewers( ) ) )
                 {
                     gui.onClick( e );
                     return gui;
                 }
-                if( cancelShift && e.getClick( ).name( ).contains( "SHIFT" )/*Backwardss compability*/ && gui.inv.getType( ) == e.getView( ).getTopInventory( ).getType( ) && gui.inv.getTitle( ).equals( e.getView( ).getTopInventory( ).getTitle( ) ) && gui.inv.getViewers( ).equals( e.getView( ).getTopInventory( ).getViewers( ) ) )
+                if( cancelShift && e.getClick( ).name( ).contains( "SHIFT" ) /*Backwardss compability*/
+                        && gui.inv.getType( ) == e.getView( ).getTopInventory( ).getType( )
+                        && gui.inv.getTitle( ).equals( e.getView( ).getTopInventory( ).getTitle( ) )
+                        && gui.inv.getViewers( ).equals( e.getView( ).getTopInventory( ).getViewers( ) ) )
                 {
                     e.setCancelled( true );
                     return null;
@@ -69,11 +76,16 @@ public abstract class MenuGUI implements Listener
     {
         if( e == null )
             return null;
+
         if( e.getInventory( ) == null )
-            return null;//Just in case. Why not?
+            return null; //Just in case. Why not?
+
         for( MenuGUI gui : guis )
         {
-            if( gui.main.getDescription( ).getName( ).equals( main.getDescription( ).getName( ) ) && gui.inv.getType( ) == e.getInventory( ).getType( ) && gui.inv.getTitle( ).equals( e.getInventory( ).getTitle( ) ) && gui.inv.getViewers( ).equals( e.getInventory( ).getViewers( ) ) )
+            if( gui.main.getDescription( ).getName( ).equals( main.getDescription( ).getName( ) )
+                    && gui.inv.getType( ) == e.getInventory( ).getType( )
+                    && gui.inv.getTitle( ).equals( e.getInventory( ).getTitle( ) )
+                    && gui.inv.getViewers( ).equals( e.getInventory( ).getViewers( ) ) )
             {
                 gui.onClose( e );
                 return gui;
