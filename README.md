@@ -1,2 +1,5 @@
 # MenuAPI---SignInput
-MenuAPI + SignInput for Spigot
+
+Menu API and compatible SignInputAPI (ProtocolLib needed)
+
+Credits goes out to @NonameSL for his Menu API.
