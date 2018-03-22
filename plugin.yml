@@ -1,0 +1,8 @@
+name: MenuAPI
+version: 0.0.1
+main: de.kiyan.menuapi.Main
+description: MenuAPI
+depend: [ProtocolLib]
+
+commands:
+  test:
