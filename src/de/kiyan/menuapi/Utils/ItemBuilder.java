@@ -205,7 +205,6 @@ public class ItemBuilder
 
     /**
      * Remove a lore line.
-     *
      */
     public ItemBuilder removeLoreLine( String line )
     {
@@ -278,7 +277,7 @@ public class ItemBuilder
     @SuppressWarnings( "deprecation" )
     public ItemBuilder setDyeColor( DyeColor color )
     {
-        this.is.setDurability( color.getWoolData() );
+        this.is.setDurability( color.getWoolData( ) );
         return this;
     }
 
@@ -294,7 +293,8 @@ public class ItemBuilder
     {
         if( !is.getType( ).equals( Material.WOOL ) )
             return this;
-        this.is.setDurability( color.getWoolData() ); return this;
+        this.is.setDurability( color.getWoolData( ) );
+        return this;
     }
 
     /**

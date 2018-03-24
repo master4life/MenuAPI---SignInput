@@ -3,14 +3,15 @@ package de.kiyan.menuapi;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import com.comphenix.protocol.events.ListenerPriority;
+import de.kiyan.menuapi.ChatMenuAPI.menu.ChatMenuAPI;
+import de.kiyan.menuapi.Commands.CMDAnvil;
+import de.kiyan.menuapi.Commands.CMDChat;
 import de.kiyan.menuapi.Commands.CMDMenu;
-import de.kiyan.menuapi.Utils.MenuGUI;
+import de.kiyan.menuapi.Commands.CMDMultiColor;
+import de.kiyan.menuapi.MenuAPI.MenuAPI;
 import de.kiyan.menuapi.Utils.SignChangeDetector;
 import org.bukkit.Bukkit;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener
@@ -24,12 +25,21 @@ public class Main extends JavaPlugin implements Listener
         // Saving main instance to 'getInstance'
         getInstance = this;
 
+        // Initiate ChatMenuAPI
+        ChatMenuAPI.init(this);
+
         // Registering CommandExecutor on different class.
+
         this.getCommand( "test" ).setExecutor( new CMDMenu( ) );
+        this.getCommand( "test2" ).setExecutor( new CMDChat( ) );
+        this.getCommand( "test3" ).setExecutor( new CMDMultiColor( ) );
+        this.getCommand( "test4" ).setExecutor( new CMDAnvil( ) );
 
         // Register Listener for MenuAPI.
+
         Bukkit.getPluginManager( ).registerEvents( this, this );
-        Bukkit.getPluginManager( ).registerEvents( new CMDMenu(), this );
+        Bukkit.getPluginManager( ).registerEvents( new MenuAPI(), this );
+        Bukkit.getPluginManager( ).registerEvents( new CMDMenu( ), this );
 
         ProtocolManager manager = ProtocolLibrary.getProtocolManager( );
 
@@ -39,27 +49,9 @@ public class Main extends JavaPlugin implements Listener
 
     }
 
-    /*
-    * Those two listeners are required to fetch menu behavior.
-    *
-    * Not necessary to be on main class, can also relocated to another class ( but has to be registered ! )
-    *
-    * !! Do not touch this code !! Only copy & paste it for relocation.
-    *
-     */
-    @EventHandler
-    public void onInventoryClose( InventoryCloseEvent e )
+    public void onDisable()
     {
-       MenuGUI menu = MenuGUI.checkForMenuClose( this, e ); // Assuming that 'this' is a JavaPlugin object, your main class instance
-    }
-
-    @EventHandler
-    public void onInventoryClick( InventoryClickEvent e )
-    {
-        MenuGUI menu = MenuGUI.checkForMenuClick( this, e, true ); // Assuming that 'this' is a JavaPlugin object, your main class instance
-        if( menu != null )
-        {
-            e.setCancelled( true );
-        }
+        // Unload ChatMenuAPI
+        ChatMenuAPI.disable();
     }
 }
