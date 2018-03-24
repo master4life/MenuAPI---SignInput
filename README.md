@@ -1,5 +1,6 @@
-# MenuAPI---SignInput
+# SkyprisonLibrary
+Being used for Skyprison server.
 
-Menu API and compatible SignInputAPI (ProtocolLib needed)
-
-Credits goes out to @NonameSL for his Menu API.
+Credits goes out for
+https://github.com/timtomtim7/ChatMenuAPI/
+https://github.com/upperlevel/anvil-gui/
