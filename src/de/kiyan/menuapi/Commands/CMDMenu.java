@@ -5,8 +5,7 @@ import de.kiyan.menuapi.MenuAPI.InventoryClickType;
 import de.kiyan.menuapi.MenuAPI.Menu;
 import de.kiyan.menuapi.MenuAPI.MenuAPI;
 import de.kiyan.menuapi.MenuAPI.MenuItem;
-import de.kiyan.menuapi.Utils.SignInputAPI;
-import de.kiyan.menuapi.Utils.SignInputEvent;
+import de.kiyan.menuapi.SignAPI.SignMenu;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,6 +14,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.Arrays;
 
 public class CMDMenu implements CommandExecutor, Listener
 {
@@ -44,37 +45,18 @@ public class CMDMenu implements CommandExecutor, Listener
             {
                 if( clickType.isLeftClick() )
                 {
-                    new SignInputAPI( ).openEditor( player );
+                    new SignMenu( Main.getInstance ).open( player, new String[]{ "§oType", "", "", ""}, (p, text ) -> {
+                        p.sendMessage( "You just typed: " + Arrays.toString( text ).replace( ",", "" ).replace( "[", "" ).replace( "]", "" ).trim( ) );
+
+                        menu.updateMenu();
+                    } );
                 }
             }
         }, 0 );
 
         menu.openMenu( player );
 
-
         return false;
     }
 
-    /*
-     * This custom listener gets triggered, when the user closed the SignInputField.
-     * It delievers information like  player, single signLines, Array signlines or getHandlers (???).
-     *
-     * Can also be placed on main class.
-     */
-    @EventHandler
-    public void SignInput( SignInputEvent event )
-    {
-        Player player = ( Player ) event.getPlayer( );
-        String signLines = event.getLine( 0 ) + event.getLine( 1 ) + event.getLine( 2 ) + event.getLine( 3 );
-
-        if( signLines.equalsIgnoreCase( "" ) )
-        {
-            player.sendMessage( "You cannot leave it empty, please type again!" );
-            new SignInputAPI( ).openEditor( player );
-
-            return;
-        }
-
-        player.sendMessage( "Succesful! You just typed | §c" + signLines );
-    }
 }

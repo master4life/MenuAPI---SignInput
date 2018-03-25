@@ -3,3 +3,10 @@ version: 0.0.1
 main: de.kiyan.menuapi.Main
 description: MenuAPI
 depend: [ProtocolLib]
+
+commands:
+  test:
+  test2:
+  test3:
+  test4:
+  test5:

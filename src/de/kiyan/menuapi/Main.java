@@ -1,17 +1,10 @@
 package de.kiyan.menuapi;
 
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.ProtocolManager;
-import com.comphenix.protocol.events.ListenerPriority;
 import de.kiyan.menuapi.ChatMenuAPI.menu.ChatMenuAPI;
-import de.kiyan.menuapi.Commands.CMDAnvil;
-import de.kiyan.menuapi.Commands.CMDChat;
-import de.kiyan.menuapi.Commands.CMDMenu;
-import de.kiyan.menuapi.Commands.CMDMultiColor;
+import de.kiyan.menuapi.Commands.*;
 import de.kiyan.menuapi.MenuAPI.MenuAPI;
-import de.kiyan.menuapi.Utils.SignChangeDetector;
+import de.kiyan.menuapi.TitlesAPI.Titles;
 import org.bukkit.Bukkit;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin
@@ -24,27 +17,26 @@ public class Main extends JavaPlugin
     {
         // Saving main instance to 'getInstance'
         getInstance = this;
+        String v = Bukkit.getServer( ).getClass( ).getPackage( ).getName( ).split( "\\." )[ 3 ];
+        Titles.oldReflection = v.equals( "v1_8_R1" );
+        Titles.newReflection = v.contains( "v1_12" );
+        Titles.plugin = this;
 
         // Initiate ChatMenuAPI
         ChatMenuAPI.init( this );
 
         // Registering CommandExecutor on different class.
 
-        //        this.getCommand( "test" ).setExecutor( new CMDMenu( ) );
-        //        this.getCommand( "test2" ).setExecutor( new CMDChat( ) );
-        //        this.getCommand( "test3" ).setExecutor( new CMDMultiColor( ) );
-        //        this.getCommand( "test4" ).setExecutor( new CMDAnvil( ) );
+//        this.getCommand( "test" ).setExecutor( new CMDMenu( ) );
+//        this.getCommand( "test2" ).setExecutor( new CMDChat( ) );
+//        this.getCommand( "test3" ).setExecutor( new CMDMultiColor( ) );
+//        this.getCommand( "test4" ).setExecutor( new CMDAnvil( ) );
+//        this.getCommand( "test5" ).setExecutor( new CMDTitles( ) );
 
         // Register Listener for MenuAPI.
 
         Bukkit.getPluginManager( ).registerEvents( new MenuAPI( ), this );
-        //        Bukkit.getPluginManager( ).registerEvents( new CMDMenu( ), this );
-
-        ProtocolManager manager = ProtocolLibrary.getProtocolManager( );
-
-        // Registering Packet Listener for ProtocolLib.
-        if( !manager.getPacketListeners( ).contains( new SignChangeDetector( this, ListenerPriority.NORMAL ) ) )
-            manager.addPacketListener( new SignChangeDetector( this, ListenerPriority.NORMAL ) );
+//        Bukkit.getPluginManager( ).registerEvents( new CMDMenu( ), this );
 
     }
 
