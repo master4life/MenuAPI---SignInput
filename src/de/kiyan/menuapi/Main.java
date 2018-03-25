@@ -14,7 +14,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin implements Listener
+public class Main extends JavaPlugin
 {
     // Main class is needed.
     public static Main getInstance;
@@ -26,20 +26,19 @@ public class Main extends JavaPlugin implements Listener
         getInstance = this;
 
         // Initiate ChatMenuAPI
-        ChatMenuAPI.init(this);
+        ChatMenuAPI.init( this );
 
         // Registering CommandExecutor on different class.
 
-        this.getCommand( "test" ).setExecutor( new CMDMenu( ) );
-        this.getCommand( "test2" ).setExecutor( new CMDChat( ) );
-        this.getCommand( "test3" ).setExecutor( new CMDMultiColor( ) );
-        this.getCommand( "test4" ).setExecutor( new CMDAnvil( ) );
+        //        this.getCommand( "test" ).setExecutor( new CMDMenu( ) );
+        //        this.getCommand( "test2" ).setExecutor( new CMDChat( ) );
+        //        this.getCommand( "test3" ).setExecutor( new CMDMultiColor( ) );
+        //        this.getCommand( "test4" ).setExecutor( new CMDAnvil( ) );
 
         // Register Listener for MenuAPI.
 
-        Bukkit.getPluginManager( ).registerEvents( this, this );
-        Bukkit.getPluginManager( ).registerEvents( new MenuAPI(), this );
-        Bukkit.getPluginManager( ).registerEvents( new CMDMenu( ), this );
+        Bukkit.getPluginManager( ).registerEvents( new MenuAPI( ), this );
+        //        Bukkit.getPluginManager( ).registerEvents( new CMDMenu( ), this );
 
         ProtocolManager manager = ProtocolLibrary.getProtocolManager( );
 
@@ -49,9 +48,9 @@ public class Main extends JavaPlugin implements Listener
 
     }
 
-    public void onDisable()
+    public void onDisable( )
     {
         // Unload ChatMenuAPI
-        ChatMenuAPI.disable();
+        ChatMenuAPI.disable( );
     }
 }
