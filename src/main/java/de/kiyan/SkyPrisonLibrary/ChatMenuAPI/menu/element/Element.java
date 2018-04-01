@@ -1,8 +1,8 @@
 package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element;
 
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.IElementContainer;
-import de.kiyan.menuapi.Utils.State;
-import de.kiyan.menuapi.Utils.Text;
+import de.kiyan.SkyPrisonLibrary.Utils.State;
+import de.kiyan.SkyPrisonLibrary.Utils.Text;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
@@ -17,9 +17,9 @@ public abstract class Element
     protected int x, y;
 
     @Nullable
-    protected Sound clickSound = Sound.UI_BUTTON_CLICK;
-    protected float clickVolume = 0.5f;
-    protected float clickPitch = 1;
+    private Sound clickSound = Sound.UI_BUTTON_CLICK;
+    private float clickVolume = 0.5f;
+    private float clickPitch = 1;
 
     private boolean visible = true;
 
@@ -213,7 +213,7 @@ public abstract class Element
      * @param context the current render context
      * @return the rendered text
      */
-    public abstract List< Text > render( IElementContainer context );
+    public abstract List<Text> render(IElementContainer context);
 
     /**
      * Called when a player clicks this element.
@@ -243,7 +243,7 @@ public abstract class Element
      * @return an unmodifiable {@link java.util.Collection} of all the states in this element.
      */
     @Nonnull
-    public Collection< State< ? > > getStates( )
+    public Collection<State<?>> getStates()
     {
         return Collections.emptyList( );
     }

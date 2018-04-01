@@ -3,7 +3,7 @@ package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.ChatMenu;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.ChatMenuAPI;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.IElementContainer;
-import de.kiyan.menuapi.Utils.Text;
+import de.kiyan.SkyPrisonLibrary.Utils.Text;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -116,7 +116,7 @@ public class ButtonElement extends Element
     }
 
     @Nonnull
-    public List< Text > render( @Nonnull IElementContainer context )
+    public List<Text> render(@Nonnull IElementContainer context)
     {
         String baseCommand = context.getCommand( this );
 

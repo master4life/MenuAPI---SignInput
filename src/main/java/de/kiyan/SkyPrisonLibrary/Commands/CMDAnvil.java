@@ -1,11 +1,11 @@
 package de.kiyan.SkyPrisonLibrary.Commands;
 
-import de.kiyan.menuapi.AnvilAPI.AnvilGUI;
+import de.kiyan.SkyPrisonLibrary.AnvilAPI.AnvilGUI;
 import de.kiyan.SkyPrisonLibrary.Main;
-import de.kiyan.menuapi.MenuAPI.InventoryClickType;
-import de.kiyan.menuapi.MenuAPI.Menu;
-import de.kiyan.menuapi.MenuAPI.MenuAPI;
-import de.kiyan.menuapi.MenuAPI.MenuItem;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.InventoryClickType;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.Menu;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.MenuAPI;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.MenuItem;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

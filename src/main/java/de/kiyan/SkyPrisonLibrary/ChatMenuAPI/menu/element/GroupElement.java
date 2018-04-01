@@ -1,7 +1,7 @@
 package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element;
 
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.IElementContainer;
-import de.kiyan.menuapi.Utils.Text;
+import de.kiyan.SkyPrisonLibrary.Utils.Text;
 import org.bukkit.entity.Player;
 
 import javax.annotation.Nonnull;
@@ -10,9 +10,9 @@ import java.util.*;
 public class GroupElement extends Element implements IElementContainer
 {
     @Nonnull
-    protected final IElementContainer parent;
+    private final IElementContainer parent;
     @Nonnull
-    protected List< Element > elements;
+    private List<Element> elements;
 
     /**
      * Constructs an element at the given x and y coordinates.
@@ -91,7 +91,7 @@ public class GroupElement extends Element implements IElementContainer
     }
 
     @Nonnull
-    public List< Text > render( @Nonnull IElementContainer context )
+    public List<Text> render(@Nonnull IElementContainer context)
     {
         if( context != parent )
             throw new IllegalStateException( "Attempted to render GroupElement with non-parent context" );

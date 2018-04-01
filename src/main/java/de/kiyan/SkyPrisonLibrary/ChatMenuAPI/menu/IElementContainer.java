@@ -1,6 +1,6 @@
 package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu;
 
-import de.kiyan.menuapi.ChatMenuAPI.menu.element.Element;
+import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element.Element;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -14,7 +14,7 @@ public interface IElementContainer
      * @param <T>     the type of element being added
      * @return the element that was added
      */
-    < T extends Element > T add( T element );
+    <T extends Element> T add(T element);
 
     /**
      * Remove the specified element from this container

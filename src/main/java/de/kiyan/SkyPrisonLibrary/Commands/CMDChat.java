@@ -1,8 +1,7 @@
 package de.kiyan.SkyPrisonLibrary.Commands;
 
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.ChatMenu;
-import de.kiyan.menuapi.ChatMenuAPI.menu.element.*;
-import de.kiyan.menuapi.Utils.State;
+import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element.*;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

@@ -28,7 +28,7 @@ public final class ChatMenuAPI
      * @param player the player whose current menu should be returned
      * @return the menu the player currently has open, or {@code null} if no menu is open.
      */
-    @Nullable
+    @javax.annotation.Nullable
     public static ChatMenu getCurrentMenu( @Nonnull Player player )
     {
         return OPENED_MENUS.get( player );

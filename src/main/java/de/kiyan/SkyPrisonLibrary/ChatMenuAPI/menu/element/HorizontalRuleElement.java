@@ -2,8 +2,8 @@ package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element;
 
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.ChatMenuAPI;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.IElementContainer;
-import de.kiyan.menuapi.Utils.Text;
-import de.kiyan.menuapi.Utils.TextUtil;
+import de.kiyan.SkyPrisonLibrary.Utils.Text;
+import de.kiyan.SkyPrisonLibrary.Utils.TextUtil;
 
 import javax.annotation.Nonnull;
 import java.util.Collections;
@@ -48,7 +48,7 @@ public class HorizontalRuleElement extends Element
         return 1;
     }
 
-    public List< Text > render( IElementContainer context )
+    public List<Text> render(IElementContainer context)
     {
         return Collections.singletonList( new Text( text ) );
     }

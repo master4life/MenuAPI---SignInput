@@ -1,8 +1,7 @@
 package de.kiyan.SkyPrisonLibrary;
 
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.ChatMenuAPI;
-import de.kiyan.menuapi.Commands.*;
-import de.kiyan.menuapi.MenuAPI.MenuAPI;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.MenuAPI;
 import de.kiyan.SkyPrisonLibrary.TitlesAPI.Titles;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

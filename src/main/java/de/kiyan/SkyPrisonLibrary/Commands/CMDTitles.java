@@ -1,12 +1,12 @@
 package de.kiyan.SkyPrisonLibrary.Commands;
 
 import de.kiyan.SkyPrisonLibrary.Main;
-import de.kiyan.menuapi.MenuAPI.InventoryClickType;
-import de.kiyan.menuapi.MenuAPI.Menu;
-import de.kiyan.menuapi.MenuAPI.MenuAPI;
-import de.kiyan.menuapi.MenuAPI.MenuItem;
-import de.kiyan.menuapi.SignAPI.SignMenu;
-import de.kiyan.menuapi.TitlesAPI.*;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.InventoryClickType;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.Menu;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.MenuAPI;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.MenuItem;
+import de.kiyan.SkyPrisonLibrary.SignAPI.SignMenu;
+import de.kiyan.SkyPrisonLibrary.TitlesAPI.*;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;

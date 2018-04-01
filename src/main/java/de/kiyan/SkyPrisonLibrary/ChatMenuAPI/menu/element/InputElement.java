@@ -3,8 +3,8 @@ package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.CMListener;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.ChatMenuAPI;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.IElementContainer;
-import de.kiyan.menuapi.Utils.State;
-import de.kiyan.menuapi.Utils.Text;
+import de.kiyan.SkyPrisonLibrary.Utils.State;
+import de.kiyan.SkyPrisonLibrary.Utils.Text;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import org.bukkit.entity.Player;
@@ -69,7 +69,7 @@ public class InputElement extends Element
     }
 
     @Nonnull
-    public List< Text > render( @Nonnull IElementContainer context )
+    public List<Text> render(@Nonnull IElementContainer context)
     {
         ClickEvent click = new ClickEvent( ClickEvent.Action.RUN_COMMAND, context.getCommand( this ) );
 

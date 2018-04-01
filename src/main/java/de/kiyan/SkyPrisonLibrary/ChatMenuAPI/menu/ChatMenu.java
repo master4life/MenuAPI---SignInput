@@ -1,10 +1,10 @@
 package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu;
 
-import de.kiyan.menuapi.ChatMenuAPI.menu.element.ButtonElement;
-import de.kiyan.menuapi.ChatMenuAPI.menu.element.Element;
+import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element.ButtonElement;
+import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element.Element;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.protocol.PlayerChatIntercept;
+import de.kiyan.SkyPrisonLibrary.Utils.Text;
 import io.netty.util.internal.ConcurrentSet;
-import de.kiyan.menuapi.Utils.Text;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.entity.Player;
 

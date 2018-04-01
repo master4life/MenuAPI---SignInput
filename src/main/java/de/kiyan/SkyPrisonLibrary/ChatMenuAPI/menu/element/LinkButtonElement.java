@@ -2,7 +2,7 @@ package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element;
 
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.ChatMenuAPI;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.IElementContainer;
-import de.kiyan.menuapi.Utils.Text;
+import de.kiyan.SkyPrisonLibrary.Utils.Text;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -85,7 +85,7 @@ public class LinkButtonElement extends Element
         return 1;
     }
 
-    public List< Text > render( IElementContainer context )
+    public List<Text> render(IElementContainer context)
     {
         BaseComponent[] components = TextComponent.fromLegacyText( text );
         ClickEvent click = new ClickEvent( ClickEvent.Action.OPEN_URL, link );

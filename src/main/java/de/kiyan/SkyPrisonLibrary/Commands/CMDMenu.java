@@ -1,17 +1,16 @@
 package de.kiyan.SkyPrisonLibrary.Commands;
 
 import de.kiyan.SkyPrisonLibrary.Main;
-import de.kiyan.menuapi.MenuAPI.InventoryClickType;
-import de.kiyan.menuapi.MenuAPI.Menu;
-import de.kiyan.menuapi.MenuAPI.MenuAPI;
-import de.kiyan.menuapi.MenuAPI.MenuItem;
-import de.kiyan.menuapi.SignAPI.SignMenu;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.InventoryClickType;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.Menu;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.MenuAPI;
+import de.kiyan.SkyPrisonLibrary.MenuAPI.MenuItem;
+import de.kiyan.SkyPrisonLibrary.SignAPI.SignMenu;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 

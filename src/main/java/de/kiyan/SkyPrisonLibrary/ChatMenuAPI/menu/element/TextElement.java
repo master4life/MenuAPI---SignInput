@@ -2,7 +2,7 @@ package de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.element;
 
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.ChatMenuAPI;
 import de.kiyan.SkyPrisonLibrary.ChatMenuAPI.menu.IElementContainer;
-import de.kiyan.menuapi.Utils.Text;
+import de.kiyan.SkyPrisonLibrary.Utils.Text;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -14,15 +14,15 @@ import java.util.List;
  */
 public class TextElement extends Element
 {
-    protected static final int BORDER_WIDTH = ChatMenuAPI.getWidth( "|  |" );
+    private static final int BORDER_WIDTH = ChatMenuAPI.getWidth("|  |");
 
     @Nonnull
-    protected String[] lines;
+    private String[] lines;
     protected int width;
 
     @Nonnull
-    protected TextAlignment alignment = TextAlignment.LEFT;
-    protected boolean border;
+    private TextAlignment alignment = TextAlignment.LEFT;
+    private boolean border;
 
     /**
      * Constructs a {@code TextElement} with {@link TextAlignment#LEFT} and no border
@@ -77,7 +77,7 @@ public class TextElement extends Element
         setLines( text.split( "\n" ) );
     }
 
-    public void setLines( @Nonnull String... lines )
+    private void setLines(@Nonnull String... lines)
     {
         int newWidth = 0;
         for( String line : lines )
@@ -145,7 +145,7 @@ public class TextElement extends Element
     /**
      * @param alignment the new text alignment
      */
-    public void setAlignment( @Nullable TextAlignment alignment )
+    private void setAlignment(@Nullable TextAlignment alignment)
     {
         this.alignment = alignment == null ? TextAlignment.LEFT : alignment;
     }
@@ -172,7 +172,7 @@ public class TextElement extends Element
         return border ? lines.length + 2 : lines.length;
     }
 
-    public List< Text > render( IElementContainer context )
+    public List<Text> render(IElementContainer context)
     {
         List< Text > result = new ArrayList<>( );
         if( alignment == TextAlignment.LEFT )

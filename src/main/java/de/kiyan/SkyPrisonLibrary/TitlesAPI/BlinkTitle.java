@@ -3,8 +3,7 @@ package de.kiyan.SkyPrisonLibrary.TitlesAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import static de.kiyan.menuapi.TitlesAPI.Titles.*;
-import static de.kiyan.menuapi.TitlesAPI.Titles.sendActionbarPacket;
+import static de.kiyan.SkyPrisonLibrary.TitlesAPI.Titles.*;
 
 public class BlinkTitle implements Title
 {

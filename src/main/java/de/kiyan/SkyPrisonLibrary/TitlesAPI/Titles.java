@@ -1,6 +1,6 @@
 package de.kiyan.SkyPrisonLibrary.TitlesAPI;
 
-import de.kiyan.menuapi.Main;
+import de.kiyan.SkyPrisonLibrary.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

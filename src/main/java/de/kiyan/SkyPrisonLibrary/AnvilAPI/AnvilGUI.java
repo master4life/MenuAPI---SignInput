@@ -1,6 +1,6 @@
 package de.kiyan.SkyPrisonLibrary.AnvilAPI;
 
-import de.kiyan.menuapi.AnvilAPI.version.NmsHelper;
+import de.kiyan.SkyPrisonLibrary.AnvilAPI.version.NmsHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
