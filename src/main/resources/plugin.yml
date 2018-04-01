@@ -1,5 +1,5 @@
 name: SkyprisonLibrary
 version: 0.0.1
-main: de.kiyan.menuapi.Main
+main: de.kiyan.SkyPrisonLibrary.Main
 description: SkyprisonLibrary
 depend: [ProtocolLib]
