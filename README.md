@@ -1,4 +1,4 @@
-# SkyprisonLibrary
+# SkyPrisonLibrary
 Being used for Skyprison server: 
 
 Credits goes out for:
