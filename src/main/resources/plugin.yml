@@ -1,12 +1,5 @@
-name: MenuAPI
+name: SkyprisonLibrary
 version: 0.0.1
 main: de.kiyan.menuapi.Main
-description: MenuAPI
+description: SkyprisonLibrary
 depend: [ProtocolLib]
-
-commands:
-  test:
-  test2:
-  test3:
-  test4:
-  test5:

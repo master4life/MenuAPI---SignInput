@@ -25,6 +25,7 @@ public class Main extends JavaPlugin
         ChatMenuAPI.init( this );
 
         // Registering CommandExecutor on different class.
+        // Command examples
 
 //        this.getCommand( "test" ).setExecutor( new CMDMenu( ) );
 //        this.getCommand( "test2" ).setExecutor( new CMDChat( ) );
@@ -35,8 +36,6 @@ public class Main extends JavaPlugin
         // Register Listener for MenuAPI.
 
         Bukkit.getPluginManager( ).registerEvents( new MenuAPI( ), this );
-//        Bukkit.getPluginManager( ).registerEvents( new CMDMenu( ), this );
-
     }
 
     public void onDisable( )
